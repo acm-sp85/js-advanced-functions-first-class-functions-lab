@@ -13,54 +13,23 @@ const returnLastTwoDrivers = function (array){
 //createFareMultiplier is a function that thakes an integer and multiplies it by a given fare
 function createFareMultiplier(integer){
 
-    return function fareMultiplier (fare){
-        return integer*fare;
-    }
+    return (fare)=>integer*fare;
 }
-
-
-
 
 const selectingDrivers = [returnFirstTwoDrivers,returnLastTwoDrivers];
 
+// const fareDoubler = (fare)=>createFareMultiplier(2)(fare);
+// const fareTripler = (fare)=>createFareMultiplier(3)(fare);
 
+const fareDoubler = createFareMultiplier(2);
+const fareTripler = createFareMultiplier(3);
 
-//fareDoubler is a function that takes a fare and multiplies it by 2 using math stated in 
-//the createFareMultiplier function. To use that math I've called the function passing it
-//the Argument Integrer (in our case 2) and then I've also passed the argument Fare (by adding
-//it right after- what I understand to be one level down).
-
-function fareDoubler(fare){
-
-
-    const mult = createFareMultiplier(2)(fare);
-
-    return mult;
-
-
-}
-
-
-//fareTripler uses the same concept as the previous exercise, but changing the Integrer value to 3
-function fareTripler(fare){
-
-
-    const mult = createFareMultiplier(3)(fare);
-
-    return mult;
-
-
-}
 
 
 function selectDifferentDrivers(array,returnFirstTwoDrivers){
 
     return returnFirstTwoDrivers(array);
 }
-
-
-
-
 
 
 //OUTPUTS
